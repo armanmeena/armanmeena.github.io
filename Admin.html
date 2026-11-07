@@ -6,18 +6,43 @@
 <div id="adminBox" style="display:none">
 <h2>🎁 GENERATE NEW KEY</h2>
 <select id="days"><option value="1">1 Day</option><option value="7">7 Days</option><option value="30">30 Days</option><option value="365">Lifetime</option></select><br>
+<p style="color:#aaa;margin:5px">Ya apne hisab se likh:</p>
+<input type="number" id="customDays" placeholder="Custom Days - jaise 2, 3, 5, 15"><br>
 <button class="gen" onclick="genKey()">✨ GENERATE KEY</button>
 <p id="newKey" style="color:#00ff88;font-weight:bold;word-break:break-all"></p>
 <hr>
 <h1>🔑 ALL KEYS</h1><input type="text" id="search" placeholder="Search Key..." onkeyup="filterKeys()"><br><button onclick="loadKeys()">🔄 REFRESH</button><p id="total"></p><div id="list"></div>
 </div>
+
+<script>
+function login(){
+  var p = document.getElementById("pass").value;
+  p = p.trim();
+  if(p === "Ayushi@2010"){
+    document.getElementById("loginBox").style.display="none";
+    document.getElementById("adminBox").style.display="block";
+  } else {
+    document.getElementById("msg").innerText="Wrong Password! - " + p;
+  }
+}
+</script>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getDatabase, ref, onValue, remove, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 const firebaseConfig = { apiKey: "AIzaSyA8-LW7UM4wovgLmuKSrAZxiFp3qHs44dA", authDomain: "arman-key-system.firebaseapp.com", databaseURL: "https://arman-key-system-default-rtdb.firebaseio.com", projectId: "arman-key-system", storageBucket: "arman-key-system.firebasestorage.app", messagingSenderId: "179603043525", appId: "1:179603043525:web:d1bcba0e96365c8ed9acac", measurementId: "G-5V0RD25QXE" };
 const app = initializeApp(firebaseConfig); const db = getDatabase(app);
-window.login = function(){ if(document.getElementById("pass").value === "Ayushi@2010"){ document.getElementById("loginBox").style.display="none"; document.getElementById("adminBox").style.display="block"; loadKeys(); } else { document.getElementById("msg").innerText="Wrong Password!"; } }
 window.genKey = async function(){
-  let days = parseInt(document.getElementById("days").value);
+  let custom = document.getElementById("customDays").value;
+  let days = custom ? parseInt(custom) : parseInt(document.getElementById("days").value);
   let key = "ARMAN-" + Math.random().toString(36).substring(2,8).toUpperCase() + "-" + Math.random().toString(36).substring(2,8).toUpperCase();
-  let expiry = Date.now() + (days*24*60*60*
+  let expiry = Date.now() + (days*24*60*60*1000);
+  await set(ref(db,'keys/'+key), { expiry: expiry, created: Date.now() });
+  document.getElementById("newKey").innerText = "New Key: " + key + " (" + days + " Days)";
+  loadKeys();
+}
+window.loadKeys = function(){ onValue(ref(db,'keys'), (snap)=>{ let data=snap.val()||{}; showKeys(data); }); }
+function showKeys(data){ let list=document.getElementById("list"); list.innerHTML=""; let keys=Object.keys(data); document.getElementById("total").innerText="Total Keys: "+keys.length; keys.reverse().forEach(k=>{ let v=data[k]; let exp=new Date(v.expiry).toLocaleString(); let status=Date.now()>v.expiry?'<span class="expired">EXPIRED</span>':'<span class="active">ACTIVE</span>'; let div=document.createElement("div"); div.className="box"; div.innerHTML="<b>"+k+"</b><br>Status: "+status+"<br>Expiry: "+exp+"<br>HWID: "+(v.hwid||"Not Used Yet")+"<br><br><button class='del' onclick=\"deleteKey('"+k+"')\">DELETE / BAN</button>"; div.setAttribute("data-key",k.toLowerCase()); list.appendChild(div); }); }
+window.filterKeys = function(){ let q=document.getElementById("search").value.toLowerCase(); document.querySelectorAll("#list .box").forEach(el=>{ el.style.display=el.getAttribute("data-key").includes(q)?"block":"none"; }); }
+window.deleteKey = async function(k){ if(confirm("BAN kar du? "+k)){ await remove(ref(db,'keys/'+k)); alert("Deleted!"); } }
+</script></body></html>
