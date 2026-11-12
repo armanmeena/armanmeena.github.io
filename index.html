@@ -1,45 +1,64 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ARMAN MEENA - GET KEY</title>
-<style>body{background:#0a0a0a;color:#fff;text-align:center;font-family:sans-serif;padding:20px}button{background:#ff0055;color:#fff;border:none;padding:13px;width:90%;max-width:350px;border-radius:10px;font-weight:bold;font-size:16px;cursor:pointer} .box{background:#111;border:1px solid #222;padding:20px;border-radius:15px;max-width:400px;margin:20px auto} .social{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:15px} .social a{background:#fff;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none} .social img{width:28px;height:28px} .social a.threads{background:#000;border:1px solid #444} .social a.x{background:#000;border:1px solid #444}</style></head>
-<body><h1>ARMAN <span style="color:#ff0055">MEENA</span></h1>
-<p style="font-size:15px;line-height:1.7;color:#ddd">Welcome to my website.<br>I am ARMAN MEENA from Jaipur.<br>I am a developer of FFI and FFM and FF Global, PNNL Servers and also developer of CH @ TS.<br>I am also Owner of ARMAN MODS OFFICIAL Server.<br>And I am also influencer of gymnastic videos</p>
-<p style="font-size:12px;color:#888">From Jaipur, Rajasthan</p>
-<div class="box"><h3>🔑 GET KEY - 24 HOURS</h3><button onclick="getKey()">GET KEY</button><div id="keyBox" style="background:#00ff88;color:#000;padding:12px;border-radius:10px;margin-top:12px;font-weight:bold;min-height:20px"></div><p style="font-size:12px;color:#888">1 Key = 1 Phone. Key share karne pe ban ho jayegi.</p></div>
-<div class="box"><h3>📲 FOLLOW KARO</h3>
-<div class="social">
-<a href="https://www.facebook.com/share/1ELQY9AemN/" target="_blank"><img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook"></a>
-<a href="https://instagram.com/why._.not.armxn" target="_blank"><img src="https://cdn.simpleicons.org/instagram/E1306C" alt="Instagram"></a>
-<a class="threads" href="https://www.threads.com/@why._.not.armxn" target="_blank"><img src="https://cdn.simpleicons.org/threads/white" alt="Threads"></a>
-<a class="x" href="https://x.com/Armankankas07" target="_blank"><img src="https://cdn.simpleicons.org/x/white" alt="X"></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARMAN CORE — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;background:#05060a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden;font-family:'Inter',sans-serif}
+body::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop') center/cover;opacity:.55}
+body::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.7))}
+.badge{position:relative;z-index:2;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(10px);padding:11px 20px;border-radius:100px;font-size:11px;letter-spacing:2.5px;text-align:center;line-height:1.7;margin-bottom:80px;font-family:'Montserrat',sans-serif;font-weight:500}
+.badge span{color:#2ecc71;font-size:14px;margin-right:6px}
+.card{position:relative;z-index:2;width:100%;max-width:380px;background:rgba(10,18,20,.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:28px 24px 22px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.avatar{width:88px;height:88px;border-radius:50%;margin:-72px auto 14px;overflow:hidden;border:3px solid #00f5d4}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;letter-spacing:8px;font-size:36px;line-height:1}
+p.sub{font-family:'Montserrat',sans-serif;letter-spacing:5px;font-size:10.5px;color:#8b9a9e;margin:10px 0 26px;font-weight:500}
+label{display:block;text-align:left;font-size:15px;font-weight:700;margin-bottom:10px;font-family:'Inter',sans-serif}
+.input-box{display:flex;align-items:center;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:0 14px;margin-bottom:16px}
+.input-box input{flex:1;background:transparent;border:none;outline:none;color:#fff;padding:15px 10px;font-size:15px;font-family:'Inter',sans-serif}
+.input-box input::placeholder{color:#7a8a8e}
+.eye{cursor:pointer;opacity:.7}
+button{width:100%;padding:16px;border:1px solid rgba(255,255,255,.25);border-radius:14px;background:rgba(255,255,255,.05);color:#fff;font-weight:600;font-size:16px;cursor:pointer;font-family:'Inter',sans-serif}
+.dev{margin-top:18px;font-size:11px;letter-spacing:3px;color:#8b9a9e;font-family:'Montserrat',sans-serif;font-weight:500}
+.msg{font-size:13px;color:#ff6b6b;margin-top:10px;min-height:16px}
+#dashboard{display:none;position:relative;z-index:2;width:100%;max-width:900px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:600px){.grid{grid-template-columns:1fr 1fr}.badge{margin-bottom:50px}}
+.stat{background:rgba(13,16,23,.9);border:1px solid #1f2433;border-radius:16px;padding:16px}
+.stat small{color:#8b93a7}.stat b{font-size:26px;display:block;margin-top:5px}
+.panel{background:rgba(13,16,23,.9);border:1px solid #1f2433;border-radius:16px;padding:16px;margin-top:12px}
+.row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #1a1e2b;font-size:14px}
+.badge2{background:#123322;color:#2ecc71;padding:4px 10px;border-radius:20px;font-size:11px}
+</style>
+</head>
+<body>
+<div class="badge"><span>●</span> ARMAN MASTER CLEARANCE •<br>256-BIT ENCRYPTED</div>
+<div class="card" id="loginCard">
+<div class="avatar"><img src="logo.jpg" alt="ARMAN"></div>
+<h1>ARMAN CORE</h1>
+<p class="sub">GLOBAL MASTER CONTROL</p>
+<label>Master Password</label>
+<div class="input-box">🛡<input type="password" id="pass" placeholder="Enter Master Admin Key"><span class="eye" onclick="toggle()">👁</span></div>
+<button onclick="login()">Unlock Admin &nbsp;→</button>
+<div class="msg" id="msg"></div>
+<div class="dev">DEVELOPER</div>
 </div>
-<p style="font-size:12px;color:#888;margin-top:12px">Facebook • Instagram • Threads • X</p>
+<div id="dashboard">
+<div class="top"><h2>Welcome, <span style="color:#ff9500">ARMAN</span> 👑</h2><button onclick="logout()" style="width:auto;padding:9px 16px;background:#1a1e2b;border:1px solid #2a2f42;color:#fff;border-radius:10px">Logout</button></div>
+<div class="grid"><div class="stat"><small>Total Resellers</small><b>12</b></div><div class="stat"><small>Total Licenses</small><b>148</b></div><div class="stat"><small>Active Users</small><b>89</b></div></div>
+<div class="panel"><h3 style="margin-bottom:6px">Recent Resellers</h3><div class="row"><span>reseller_01 • 20 Keys</span><span class="badge2">ACTIVE</span></div><div class="row"><span>tiger_mods • 15 Keys</span><span class="badge2">ACTIVE</span></div><div class="row"><span>arman_vip • 50 Keys</span><span class="badge2">ACTIVE</span></div></div>
 </div>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-const firebaseConfig = {
-  apiKey: "AIzaSyA8-LW7UM4wovgLmuKSrAZxiFp3qHs44dA",
-  authDomain: "arman-key-system.firebaseapp.com",
-  databaseURL: "https://arman-key-system-default-rtdb.firebaseio.com",
-  projectId: "arman-key-system",
-  storageBucket: "arman-key-system.firebasestorage.app",
-  messagingSenderId: "179603043525",
-  appId: "1:179603043525:web:d1bcba0e96365c8ed9acac",
-  measurementId: "G-5V0RD25QXE"
-};
-const app = initializeApp(firebaseConfig); const db = getDatabase(app);
-window.getKey = async function(){
-  let saved = localStorage.getItem("arman_key");
-  if(saved){ document.getElementById("keyBox").innerText = saved; return; }
-  let url = new URLSearchParams(window.location.search);
-  let adsDone = url.get("ads");
-  if(!adsDone){
-    window.open("https://shrinkme.click/aQVxbF","_blank");
-    alert("Ads complete karke wapas aao, fir se GET KEY dabao!");
-    return;
-  }
-  let k = "ARMAN-" + Math.random().toString(36).substring(2,6).toUpperCase() + "-" + Math.random().toString(36).substring(2,6).toUpperCase();
-  await set(ref(db,'keys/'+k),{created:Date.now(), expiry:Date.now()+24*60*60*1000, status:"active", hwid:""});
-  localStorage.setItem("arman_key",k);
-  document.getElementById("keyBox").innerText = k;
-}
-</script></body></html>
+<script>
+const ADMIN_PASS="Ayushi@2010";
+function login(){const v=document.getElementById('pass').value;if(v===ADMIN_PASS){document.getElementById('loginCard').style.display='none';document.querySelector('.badge').style.display='none';document.getElementById('dashboard').style.display='block';}else{document.getElementById('msg').innerText="Wrong Password! Access Denied.";}}
+function logout(){document.getElementById('dashboard').style.display='none';document.getElementById('loginCard').style.display='block';document.querySelector('.badge').style.display='block';document.getElementById('pass').value='';}
+function toggle(){const p=document.getElementById('pass');p.type=p.type==='password'?'text':'password';}
+document.getElementById('pass').addEventListener('keydown',e=>{if(e.key==='Enter')login();});
+</script>
+</body>
+</html>
